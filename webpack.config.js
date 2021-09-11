@@ -9,6 +9,15 @@ module.exports = {
         filename: "[name].bundle.js",
         path: path.join(__dirname, "public/dist")
     },
+    resolve: {
+        extensions: [".js", ".jsx"],
+        modules: [
+            "node_modules",
+        ],
+        alias: {
+            'handsontable': path.resolve(__dirname, '../handsontable/dist/handsontable.full.js'),
+        }
+    },
     module: {
         rules: [
             {
@@ -32,5 +41,6 @@ module.exports = {
             template: path.join(__dirname, "./template.html")
         }),
     ],
-    watch: true
+    watch: true,
+    mode: "development"
 }
