@@ -9,7 +9,11 @@ const data = [
     ['a1', 'elit', 'Ut', 'imperdiet', '5/12/2015', 6],
     ['Z2', 'vulputate', 'leo', 'semper', '10/23/2015', 26],
     ['a2', 'et', 'malesuada', 'libero', '12/1/2014', 98],
-    ['Z3', 'et', 'dignissim', 'hendrerit', '12/1/2016', 8.5]
+    ['Z3', 'et', 'dignissim', 'hendrerit', '12/1/2016', 8.5],
+    ['N/A', 'et', 'malesuada', 'libero', '12/1/2014', 98],
+    ['', 'et', 'dignissim', 'hendrerit', '12/1/2016', 8.5],
+    [null, 'et', 'dignissim', 'hendrerit', '12/1/2016', 8.5],
+    [undefined, 'et', 'dignissim', 'hendrerit', '12/1/2016', 8.5],
 ];
 
 const columns = [
@@ -57,13 +61,6 @@ class App extends React.Component {
                 ]}
                 filters={true}
                 afterFilter={this.afterFilter}
-                beforeFilterValueOptionsShow={(index1, index2, items) => {
-                    items.sort((i, j) => {
-                        if (i.value.toString().toLowerCase() < j.value.toString().toLowerCase()) return -1;
-                        if (i.value.toString().toLowerCase() > j.value.toString().toLowerCase()) return 1;
-                        return 0;
-                    });
-                }}
             ></HotTable>
         </div>
     }
